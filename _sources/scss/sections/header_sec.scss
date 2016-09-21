@@ -1,0 +1,143 @@
+.header_cont {
+  padding-left: 260px;
+  background: $gray_bg;
+  height: 50px;
+  color: $black_font;
+  display: none;
+
+  @media (min-width: 970px) {
+    display: block;
+  }
+}
+
+.header_cont .number {
+  float: left;
+  margin-left: 50px;
+  margin-top: 18px;
+  font-size: 15px;
+}
+
+.header_cont .time_work {
+  float: left;
+  margin-left: 14px;
+  font-size: 15px;
+  margin-top: 18px;
+  cursor: pointer;
+}
+
+.header_cont .time_work .icon {
+  background: url($sprite) no-repeat -206px -36px;
+  height: 24px;
+  width: 24px;
+  float: left;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: -5px;
+}
+
+.header_cont .time_work p {
+  float: left;
+}
+
+.header_cont .time_work p span {
+  font-size: 10px;
+}
+
+.header_cont .time_work b {
+  border-bottom: 2px dotted;
+}
+
+.header_cont .geo {
+  float: left;
+  font-size: 15px;
+  margin-top: 18px;
+}
+
+.header_cont .geo .icon {
+  background: url($sprite) no-repeat -235px -36px;
+  height: 24px;
+  width: 24px;
+  float: left;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: -5px;
+}
+
+.header_cont .geo p {
+  float: left;
+}
+
+.header_cont .social {
+  float: right;
+  display: none;
+
+  @media (min-width: 1170px) {
+    display: block;
+  }
+}
+
+.header_cont .social {
+  .inst {
+    float: left;
+    background: url($sprite) no-repeat -268px -35px;
+    width: 18px;
+    height: 19px;
+    margin-right: 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .facebook {
+    float: left;
+    background: url($sprite) no-repeat -300px -35px;
+    width: 18px;
+    height: 19px;
+    margin-right: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .vk {
+    float: left;
+    background: url($sprite) no-repeat -324px -35px;
+    width: 24px;
+    height: 19px;
+    margin-right: 10px;
+    margin-top: 18px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .twitter {
+    float: left;
+    background: url($sprite) no-repeat -358px -35px;
+    width: 24px;
+    height: 19px;
+    margin-right: 25px;
+    margin-top: 18px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,237 @@
+.navigation {
+  color: #fff;
+  position: fixed;
+  top: 0;
+  background: $red;
+  z-index: 25;
+
+  @media (min-width: 1px) {
+    width: 100%;
+    height: 71px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media (min-width: 970px) {
+    width: 260px;
+    height: 100vh;
+    overflow-y: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.navigation .wrap {
+  padding-top: 10px;
+  position: relative;
+
+  @media (min-width: 970px) {
+    height: 100vh;
+    min-height: 768px;
+  }
+}
+
+.navigation .logo {
+  @media (min-width: 1px) {
+    background: url($sprite) no-repeat -162px -147px;
+    width: 115px;
+    height: 50px;
+    float: left;
+    margin-top: 15px;
+    margin-bottom: 0;
+    margin-right: 30px;
+  }
+
+  @media (min-width: 970px) {
+    background: url($sprite) no-repeat 0 0;
+    width: 183px;
+    height: 120px;
+    float: none;
+    margin: auto;
+    margin-bottom: 35px;
+  }
+}
+
+.navigation .tel {
+  display: none;
+
+  @media (min-width: 750px) and (max-width: 970px) {
+    display: block;
+    float: left;
+    margin-top: 20px;
+    margin-right: 30px;
+    font-size: 13px;
+  }
+}
+
+.navigation .time {
+  display: none;
+
+  b {
+    border-bottom: 2px dotted;
+    padding-bottom: 2px;
+  }
+
+  @media (min-width: 1px) and (max-width: 970px) {
+    display: block;
+    float: left;
+    margin-top: 20px;
+    font-size: 13px;
+    margin-right: 30px;
+  }
+}
+
+.navigation .geo {
+  display: none;
+
+  @media (min-width: 750px) and (max-width: 970px) {
+    display: block;
+    float: left;
+    margin-top: 20px;
+    margin-right: 30px;
+    font-size: 13px;
+  }
+}
+
+.navigation .burger {
+  display: none;
+  background: url($sprite) no-repeat;
+  width: 28px;
+  height: 28px;
+  float: right;
+  margin-top: 11px;
+
+  &.menu {
+    background-position: -412px -71px;
+  }
+
+  &.closer {
+    background-position: -412px -102px;
+  }
+
+  @media (min-width: 1px) and (max-width: 970px) {
+    display: block;
+  }
+}
+
+.navigation nav {
+  padding-left: 20px;
+
+  @media (min-width: 1px) {
+    background: $black;
+    position: fixed;
+    top: 71px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    padding-top: 30px;
+    transition: transform 0.5s ease;
+
+    &.close {
+      transform: translateX(-100%);
+    }
+  }
+
+  @media (min-width: 970px) {
+    background: transparent;
+    position: static;
+    height: auto;
+    padding-top: 0;
+
+    &.close {
+      transform: translateX(0);
+    }
+  }
+}
+
+.navigation nav .wrap_menu {
+  @media (max-width: 750px) {
+    min-height: 900px;
+  }
+}
+
+.navigation h3 {
+  font-family: $stem-bold, sans-serif;
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+
+  @media (max-width: 970px) {
+    border-bottom: 2px dotted $gray;
+    padding-bottom: 10px;
+  }
+}
+
+.navigation h3 .opener {
+  background: url($sprite) no-repeat -391px -77px;
+  width: 8px;
+  height: 5px;
+  float: right;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+
+  @media (min-width: 970px) {
+    float: left;
+  }
+}
+
+.navigation .filters {
+  font-size: 13px;
+  height: auto;
+  overflow-y: hidden;
+  transition: max-height 0.8s ease;
+
+  &.open {
+    max-height: 600px;
+  }
+
+  &.close {
+    max-height: 1px;
+  }
+}
+
+.navigation .filters li {
+  margin-top: 7px;
+  margin-bottom: 7px;
+  cursor: pointer;
+
+  &:hover {
+    color: #343333;
+  }
+
+  @media (max-width: 970px) {
+    &:hover {
+      color: $orange;
+    }
+  }
+}
+
+.navigation .filters .circle {
+  padding-right: 10px;
+}
+
+.navigation .copyright {
+  width: 100%;
+  text-align: center;
+  font-family: $stem-light;
+  padding-top: 45px;
+  padding-bottom: 35px;
+
+  span {
+    display: block;
+    padding-bottom: 10px;
+    font-size: 13px;
+  }
+
+  a {
+    color: #fff;
+    font-size: 13px;
+  }
+
+  @media (max-width: 970px) {
+    display: none;
+  }
+}
