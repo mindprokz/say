@@ -1,50 +1,28 @@
-import SendFunc from './sendForm.js';
-import FloatMenu from './floatMenu.js';
-//   $(document).ready(function () {
-//     'use strict';
-// //Аякс отправка форм
-//     $("#application").submit(function () {
-//       var data = {
-//         name : document.querySelector('input[name="name"]').value,
-//         email : document.querySelector('input[name="email"]').value,
-//         telephone : document.querySelector('input[name="telephone"]').value
-//       };
-//       $.ajax({
-//         type: "POST",
-//         url: "mail.php",
-//         data: data
-//       }).done(function (value) {
-//         $('#mail')[0].innerHTML = value;
-//         $('#mail').removeClass('not_visible_mail');
-//         setTimeout(function () {
-//           $("#form").trigger("reset");
-//         }, 1000);
-//       });
-//     return false;
-//     });
-//  function  test() {
-// 	console.log('test!');
-// }
-//         $("img, a").on("dragstart", function (event) { event.preventDefault(); });
-//   });
+import Filters from './filters.js';
+import shops from './page_script/shops.js';
+import cafe from './page_script/rest.js';
+import stocks from './page_script/stocks.js';
+import service from './page_script/service.js';
 
-//Плавающее меню
-// new FloatMenu({
-//     elem : document.getElementById('navigation'),
-//     height : 200,
-//     first_class : 'menu_fixed_on_top',
-//     second_class : 'float_menu'
-//   }).init();
-//
-//
-// // Отправка формы обратной связи скрипту для отправления по почте
-// let data = {
-//   name : 'input[name="name"]',
-//   email : 'input[name="email"]',
-//   telephone : 'input[name="telephone"]'
-// };
-//
-// new SendFunc('application', data, 'mail');
+$(document).ready( function () {
+  $(".navigation .wrap").mCustomScrollbar({
+    autoHideScrollbar: true,
+  });
+});
+
+$(".fancybox").click(function() {
+	$(".fancybox").fancybox({
+		maxWidth: 800,
+		maxHeight: 800,
+		fitToView: false,
+		width: '80%',
+		height: '80%',
+		autoSize: false,
+		closeClick: false,
+		openEffect: 'fade',
+		closeEffect: 'fade'
+	});
+});
 
 // Открытие мобильного меню
 var menu = document.querySelector('.navigation .burger');
@@ -53,11 +31,11 @@ menu.addEventListener('click', function () {
   if (this.classList.contains('menu')) {
     this.classList.remove('menu');
     this.classList.add('closer');
-    document.querySelector('.navigation nav').classList.remove('close')
+    document.querySelector('.navigation nav').classList.remove('close');
   } else {
       this.classList.remove('closer');
       this.classList.add('menu');
-      document.querySelector('.navigation nav').classList.add('close')
+      document.querySelector('.navigation nav').classList.add('close');
   }
 });
 
@@ -67,11 +45,50 @@ menu.addEventListener('click', function () {
     let list = this.parentNode.nextElementSibling;
 
     if (list.classList.contains('open')) {
-      list.classList.add('close')
+      list.classList.add('close');
       list.classList.remove('open');
     } else {
-        list.classList.remove('close')
+        list.classList.remove('close');
         list.classList.add('open');
     }
   });
 });
+
+document.querySelector('.header_cont .time_work').addEventListener('click', () => {
+  document.querySelector('.time_work_modal').classList.remove('close');
+});
+
+document.querySelector('.navigation .time').addEventListener('click', () => {
+  document.querySelector('.time_work_modal').classList.remove('close');
+});
+
+document.querySelector('.time_work_modal .closer').addEventListener('click', () => {
+  document.querySelector('.time_work_modal').classList.add('close');
+});
+
+if (window.contact === true) {
+  $(".feedback").mCustomScrollbar({
+    autoHideScrollbar: true,
+    theme: 'dark'
+  });
+  // Опции карты
+  var mapOptions = {
+    zoom: 15,
+  	center: new google.maps.LatLng(51.138668,71.474600),
+  	disableDefaultUI: true
+  };
+
+  var map = new google.maps.Map(document.querySelector('.contact .map'), mapOptions);
+
+  var marker = new google.maps.Marker({
+  	position: new google.maps.LatLng(51.138668,71.474600),
+  	map: map,
+  	title: 'Филиал в Астане',
+  	icon : 'img/maps_arrow.png'
+  });
+}
+
+shops();
+cafe();
+stocks();
+service();

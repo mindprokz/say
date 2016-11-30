@@ -1,3 +1,7 @@
+- var first_nav = 'open'
+- var second_nav = 'close'
+- var third_nav = 'close'
+
 doctype html
 html(lang!="ru")
   head
@@ -17,5 +21,7 @@ html(lang!="ru")
           input(type="submit")
           div#app="Отправить"
     div#mail.not_visible_mail
-
+    include modal_stock.jade
+    script!="window.stock = true; "
+    script!="window.stock_main = true; "
     include sections/footer.jade  

@@ -1,0 +1,17 @@
+| <?php /*
+|  Template Name: Акции
+| */?>
+- var first_nav = 'close'
+- var second_nav = 'close'
+- var third_nav = 'close'
+
+doctype html
+html(lang!="ru")
+  head
+    include sections/header.jade
+  body
+    include sections/navigation.jade
+    include sections/stocks.jade
+    include modal_stock.jade
+    script!="window.stock = true;"
+    include sections/footer.jade  

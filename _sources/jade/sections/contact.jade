@@ -1,0 +1,28 @@
+section.contact
+  include header_sec.jade
+  .wrap
+    .map
+    .feedback
+      h3="ТРЦ «Сарыарка»"
+      .adress!="Адрес: 010000, г. Астана Республика Казахстан<br>Торгово-развлекательный центр «Сарыарка» пр. Туран, 24  "
+      h4="Офис Администрации Торгово-развлекательного центра  "
+      .tel="Тел.: +7 (7172) 515 606  "
+      .fax="Факс: +7 (7172) 515 599  "
+      .mail!="Электронная почта: <a href='mailto:info@saryarka.com'>info@saryarka.com</a>"
+      .social
+        .wraper
+          a(href="https://www.instagram.com/trcsaryarka/" target="_blank")
+            .inst
+          a(href="https://www.facebook.com/saryarka.admin?fref=ts" target="_blank")
+            .facebook
+          //.vk
+          //.twitter
+      form
+        h2="Остались вопросы?"
+        input(type="text" placeholder="Имя")
+        input(type="tel" placeholder="Телефон")
+        input(type="email" placeholder=" E-mail")
+        textarea(placeholder="Сообщение")
+        button="Отправить"
+script(src="http://maps.google.com/maps/api/js?key=AIzaSyDkS0y-j9aq7GAuQPJJy5uhEiVKIWBcTM4")
+script!="var contact = true"

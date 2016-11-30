@@ -1,5 +1,32 @@
 section.main
   include header_sec.jade
   section.video
-    img(src="images/video_bg.jpg")
-    .play
+    video(src!="<?php echo get_template_directory_uri(); ?>/trc.mp4" loop preload autoplay muted)
+    a(href="https://www.youtube.com/embed/Pi3-vdGGwCw?autoplay=1" class="fancybox fancybox.iframe")
+      .play
+  section.stocks
+    h2="Акции"
+    |<?php 
+    |  $args = array(
+    |    'post_type' => 'stocks_post', //Тип поста
+    |    'posts_per_page' => -1,//Постов на одной странице
+    |    'category_name' => 'stock_main' //Категория постов
+    |  );
+    | 
+    |  $lastBlog = new WP_Query($args); //Запрос ко всем постам подходящим под массив #args
+    |  if( $lastBlog->have_posts() ):
+    |   while($lastBlog->have_posts() ): $lastBlog->the_post();
+    |     $from = types_render_field( 'start_stock', array() );
+    |     $to = types_render_field( 'end_stock', array() ); 
+    |     $text = types_render_field( 'content_stock', array('raw' => true) );
+    |     if (strlen($text) > 54) { $text = substr($text, 0 , 54) . '...'; } ?>
+    article.stock_elem(data-id!="<?php the_ID(); ?>")
+      .wrap
+        .border
+          .thumb
+            img(src!="<?php echo types_render_field( 'stock_picture', array('raw' => true) ); ?>")
+          h2!="<?php the_title(); ?>"
+          p!="<?php echo $text; ?>"
+          .date!="<?php echo $from; ?> — <?php echo $to; ?>"
+    |   <?php endwhile;
+    |  endif; ?>

@@ -2,7 +2,6 @@
   color: #fff;
   position: fixed;
   top: 0;
-  background: $red;
   z-index: 25;
 
   @media (min-width: 1px) {
@@ -10,14 +9,34 @@
     height: 71px;
     padding-left: 20px;
     padding-right: 20px;
+    background: $red;
   }
 
   @media (min-width: 970px) {
     width: 260px;
-    height: 100vh;
-    overflow-y: auto;
+    min-height: 100vh;
     padding-left: 0;
     padding-right: 0;
+    background: none;
+  }
+}
+
+.navigation .skew {
+  @media (min-width: 970px) {
+    width: 96%;
+    height: 100vh;
+    position: absolute;
+    background: $red;
+    transform: skewX(3deg) translateX(17px);
+  }
+}
+
+.navigation .fill_skew {
+  @media (min-width: 970px) {
+    width: 50%;
+    height: 100vh;
+    position: absolute;
+    background: $red;
   }
 }
 
@@ -27,12 +46,16 @@
 
   @media (min-width: 970px) {
     height: 100vh;
-    min-height: 768px;
   }
+}
+
+.navigation .mCSB_scrollTools {
+  left: 0;
 }
 
 .navigation .logo {
   @media (min-width: 1px) {
+    display: block;
     background: url($sprite) no-repeat -162px -147px;
     width: 115px;
     height: 50px;
@@ -151,9 +174,14 @@
   }
 }
 
+.navigation nav a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .navigation h3 {
   font-family: $stem-bold, sans-serif;
-  font-size: 18px;
+  font-size: 17px;
   padding-top: 10px;
   padding-bottom: 10px;
   cursor: pointer;
@@ -198,15 +226,15 @@
   margin-bottom: 7px;
   cursor: pointer;
 
-  &:hover {
-    color: #343333;
-  }
-
   @media (max-width: 970px) {
     &:hover {
       color: $orange;
     }
   }
+}
+
+.navigation .filters li a:hover {
+  color: #343333;
 }
 
 .navigation .filters .circle {

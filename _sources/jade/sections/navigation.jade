@@ -1,122 +1,178 @@
 section.navigation
+  .skew
+  .fill_skew
   .wrap
-    .logo
+    a(href="http://saryarka.com/").logo
     .tel!="+7 (7172) <b>515 606</b>"
     .time!="<b>Время работы</b>: 10:00 - 22:00"
     .geo="г. Астана, пр. Туран, 24"
     .burger.menu
     nav.close
       .wrap_menu
-        h3!="<span class='opener'> </span>Магазины"
-        ul.filters.open
+        h3
+          span.opener
+          a(href="http://saryarka.com/shops")!="Магазины"
+        ul#shops_nav.filters(class=first_nav)
           li
-            span.circle!="⚬"
-            span="Аксессуары"
+            a(href="http://saryarka.com/shops#Аксессуары" data-attr="Аксессуары")
+              span.circle!="⚬"
+              span="Аксессуары"
           li
-            span.circle!="⚬"
-            span="Аптека" 
+            a(href="http://saryarka.com/shops#Аптека" data-attr="Аптека")
+              span.circle!="⚬"
+              span="Аптека" 
           li
-            span.circle!="⚬"
-            span="Косметика"   
+            a(href="http://saryarka.com/shops#Косметика" data-attr="Косметика")
+              span.circle!="⚬"
+              span="Косметика"   
           li
-            span.circle!="⚬"
-            span="Одежда мужская"   
+            a(href="http://saryarka.com/shops#Одежда мужская" data-attr="Одежда мужская")
+              span.circle!="⚬"
+              span="Одежда мужская"   
           li
-            span.circle!="⚬"
-            span="Одежда женская" 
+            a(href="http://saryarka.com/shops#Одежда женская" data-attr="Одежда женская")
+              span.circle!="⚬"
+              span="Одежда женская" 
           li
-            span.circle!="⚬"
-            span="Одежда детская"  
+            a(href="http://saryarka.com/shops#Одежда детская" data-attr="Одежда детская")
+              span.circle!="⚬"
+              span="Одежда детская"  
           li
-            span.circle!="⚬"
-            span="Обувь"
+            a(href="http://saryarka.com/shops#Обувь" data-attr="Обувь")
+              span.circle!="⚬"
+              span="Обувь"
           li
-            span.circle!="⚬"
-            span="Oптика" 
+            a(href="http://saryarka.com/shops#Oптика" data-attr="Oптика")
+              span.circle!="⚬"
+              span="Oптика" 
           li
-            span.circle!="⚬"
-            span="Сувениры" 
+            a(href="http://saryarka.com/shops#Сувениры" data-attr="Сувениры")
+              span.circle!="⚬"
+              span="Сувениры" 
           li
-            span.circle!="⚬"
-            span="Спортивная одежда" 
+            a(href="http://saryarka.com/shops#Спортивная одежда" data-attr="Спортивная одежда")
+              span.circle!="⚬"
+              span="Спортивная одежда" 
           li
-            span.circle!="⚬"
-            span="Супермаркет" 
+            a(href="http://saryarka.com/shops#Супермаркет" data-attr="Супермаркет")
+              span.circle!="⚬"
+              span="Супермаркет" 
           li
-            span.circle!="⚬"
-            span="Товары для дома"  
+            a(href="http://saryarka.com/shops#Товары для дома" data-attr="Товары для дома")
+              span.circle!="⚬"
+              span="Товары для дома"  
           li
-            span.circle!="⚬"
-            span="Ювелирные изделия и часы"  
+            a(href="http://saryarka.com/shops#Ювелирные изделия и часы" data-attr="Ювелирные изделия и часы")
+              span.circle!="⚬"
+              span="Ювелирные изделия и часы"  
           li
-            span.circle!="⚬"
-            span="Белье мужское и женское"  
+            a(href="http://saryarka.com/shops#Белье мужское и женское" data-attr="Белье мужское и женское")
+              span.circle!="⚬"
+              span="Белье мужское и женское"  
           li
-            span.circle!="⚬"
-            span="Книги"  
+            a(href="http://saryarka.com/shops#Книги" data-attr="Книги")
+              span.circle!="⚬"
+              span="Книги"  
           li
-            span.circle!="⚬"
-            span="Игрушки" 
-        h3!="<span class='opener'> </span>Кафе бары рестораны"
-        ul.filters.close
+            a(href="http://saryarka.com/shops#Игрушки" data-attr="Игрушки")
+              span.circle!="⚬"
+              span="Игрушки" 
+        h3
+          span.opener
+          a(href="http://saryarka.com/eatplace/")="Кафе бары рестораны"
+        ul#rest_nav.filters(class=second_nav)
           li
-            span.circle!="⚬"
-            span="Рестораны"
+            a(href="http://saryarka.com/eatplace/#Рестораны" data-attr="Рестораны")
+              span.circle!="⚬"
+              span="Рестораны"
           li
-            span.circle!="⚬"
-            span="Кафе"
+            a(href="http://saryarka.com/eatplace/#Кафе" data-attr="Кафе")
+              span.circle!="⚬"
+              span="Кафе"
           li
-            span.circle!="⚬"
-            span="Фуд-корт"
+            a(href="http://saryarka.com/eatplace/#Фуд-корт" data-attr="Фуд-корт")
+              span.circle!="⚬"
+              span="Фуд-корт"
           li
-            span.circle!="⚬"
-            span="Снеки и сладости"
-        h3!="<span class='opener'> </span>Услуги и развлечения"
-        ul.filters.close
+            a(href="http://saryarka.com/eatplace/#Снеки и сладости" data-attr="Снеки и сладости")
+              span.circle!="⚬"
+              span="Снеки и сладости"
+        h3
+          span.opener
+          a(href="http://saryarka.com/service/")="Услуги и развлечения"
+        ul#service_nav.filters(class=third_nav)
           li
-            span.circle!="⚬"
-            span="Автомойка"
+            a(href="http://saryarka.com/service/#Кинотеатр" data-attr="Кинотеатр")
+              span.circle!="⚬"
+              span="Кинотеатр"
           li
-            span.circle!="⚬"
-            span="Банк"
+            a(href="http://saryarka.com/service/#Мимиория" data-attr="Мимиория")
+              span.circle!="⚬"
+              span="Мимиория"
           li
-            span.circle!="⚬"
-            span="Банкоматы и терминалы"
+            a(href="http://saryarka.com/service/#Шиномонтаж" data-attr="Шиномонтаж")
+              span.circle!="⚬"
+              span="Шиномонтаж"
           li
-            span.circle!="⚬"
-            span="Детский паровозик"
+            a(href="http://saryarka.com/service/#Автомойка" data-attr="Автомойка")
+              span.circle!="⚬"
+              span="Автомойка"
           li
-            span.circle!="⚬"
-            span="Салон красоты"
+            a(href="http://saryarka.com/service/#Банк" data-attr="Банк")
+              span.circle!="⚬"
+              span="Банк"
           li
-            span.circle!="⚬"
-            span="Салон чистки обуви"
+            a(href="http://saryarka.com/service/#Студия танца" data-attr="Студия танца")
+              span.circle!="⚬"
+              span="Студия танца"
           li
-            span.circle!="⚬"
-            span="Студия танца"
+            a(href="http://saryarka.com/service/#Автосервис" data-attr="Автосервис")
+              span.circle!="⚬"
+              span="Автосервис"
           li
-            span.circle!="⚬"
-            span="Обмен валюты"
+            a(href="http://saryarka.com/service/#Банкоматы и терминалы" data-attr="Банкоматы и терминалы")
+              span.circle!="⚬"
+              span="Банкоматы и терминалы"
           li
-            span.circle!="⚬"
-            span="Шиномонтаж"
+            a(href="http://saryarka.com/service/#Детский паровозик" data-attr="Детский паровозик")
+              span.circle!="⚬"
+              span="Детский паровозик"
           li
-            span.circle!="⚬"
-            span="Авиаагентство"
+            a(href="http://saryarka.com/service/#Салон красоты" data-attr="Салон красоты")
+              span.circle!="⚬"
+              span="Салон красоты"
           li
-            span.circle!="⚬"
-            span="Химчистка"
+            a(href="http://saryarka.com/service/#Детская парикмахерская" data-attr="Детская парикмахерская")
+              span.circle!="⚬"
+              span="Детская парикмахерская"
           li
-            span.circle!="⚬"
-            span="Мимиория"
+            a(href="http://saryarka.com/service/#Салон чистки обуви" data-attr="Салон чистки обуви")
+              span.circle!="⚬"
+              span="Салон чистки обуви"
           li
-            span.circle!="⚬"
-            span="Кинотеатр"
+            a(href="http://saryarka.com/service/#Обмен валюты" data-attr="Обмен валюты")
+              span.circle!="⚬"
+              span="Обмен валюты"
           li
-            span.circle!="⚬"
-            span="Фотосалон"
-        h3="Акции"
-        h3="Контакты"
+            a(href="http://saryarka.com/service/#Авиаагентство" data-attr="Авиаагентство")
+              span.circle!="⚬"
+              span="Авиаагентство"
+          li
+            a(href="http://saryarka.com/service/#Химчистка" data-attr="Химчистка")
+              span.circle!="⚬"
+              span="Химчистка"
+          li
+            a(href="http://saryarka.com/service/#Фотосалон" data-attr="Фотосалон")
+              span.circle!="⚬"
+              span="Фотосалон"  
+          li
+            a(href="http://saryarka.com/service/#Контактный Зоопарк" data-attr="Контактный Зоопарк")
+              span.circle!="⚬"
+              span="Контактный Зоопарк"   
+        a(href="http://saryarka.com/stocks")
+          h3="Акции"
+        h3
+          a(href="http://saryarka.com/contact")="Контакты"
     .copyright
      span="© M-Line Property Management"
      br

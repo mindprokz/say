@@ -1,0 +1,267 @@
+section.modal_shop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(#000, 0.2);
+  opacity: 1;
+  z-index: 40;
+  transition: opacity 0.3s ease;
+
+  &.close {
+    opacity: 0;
+  }
+}
+
+.modal_shop .spinner {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+
+  .bounce1,
+  .bounce2,
+  .bounce3 {
+    background-color: #fff;
+  }
+}
+
+.modal_shop .wrap {
+  width: 480px;
+  height: 620px;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 1;
+  transition: transform, opacity 0.5s, 0.5s ease, ease;
+
+  &.close {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-100%);
+  }
+
+  @media (min-width: 750px) {
+    width: 730px;
+    top: 50%;
+    height: 420px;
+    transform: translate(-50%, -50%);
+  }
+
+  .content {
+    position: relative;
+    padding: 20px;
+  }
+}
+
+.modal_shop .wrap .closer {
+  background: url($sprite) no-repeat -415px -36px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.modal_shop .wrap .images {
+  @media (min-width: 750px) {
+    float: left;
+  }
+
+  h3 {
+    @media (min-width: 750px) {
+      display: none;
+    }
+  }
+}
+
+.modal_shop .wrap .thumbnail {
+  width: 240px;
+  height: 175px;
+  border: 1px solid #d9d9d9;
+  padding: 20px;
+  position: relative;
+
+  @media (max-width: 750px) {
+    margin: auto;
+  }
+}
+
+.modal_shop .wrap .thumbnail .fancybox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.modal_shop .wrap .thumbnail .fancybox .play {
+  width: 62px;
+  content: ' ';
+  height: 62px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url(/images/sprite.png) no-repeat -457px -34px;
+}
+
+.modal_shop .wrap .slider {
+  display: none;
+  width: 240px;
+  padding-left: 17px;
+  padding-right: 17px;
+  margin-top: 8px;
+
+  @media (min-width: 750px) {
+    display: block;
+  }
+
+  .flex-control-nav {
+    display: none;
+  }
+
+  .flex-direction-nav .flex-prev {
+    left: -19px;
+    top: 42px;
+    opacity: 0.7;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  .flex-direction-nav .flex-next {
+    right: -19px;
+    top: 42px;
+    opacity: 0.7;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  .flex-direction-nav a::before {
+    font-size: 15px;
+  }
+}
+
+.modal_shop .wrap .slides li {
+  height: 60px;
+  border: 1px solid #d9d9d9;
+  overflow: hidden;
+
+  .image {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.modal_shop .wrap .text {
+  float: left;
+  width: 440px;
+  padding-left: 20px;
+
+  @media (max-width: 750px) {
+    margin-top: 20px;
+  }
+}
+
+.modal_shop .wrap h3 {
+  font-family: $stem-bold;
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.modal_shop .wrap .text h3 {
+  @media (max-width: 750px) {
+    display: none;
+  }
+}
+
+.modal_shop .wrap .contacts_shop {
+  &::after {
+    content: ' ';
+    display: table;
+    clear: both;
+  }
+}
+
+.modal_shop .wrap .number {
+  height: 25px;
+  float: left;
+  margin-right: 25px;
+  margin-bottom: 5px;
+
+  .icon {
+    background: url($sprite) no-repeat -363px -71px;
+    width: 16px;
+    height: 24px;
+    float: left;
+    margin-right: 15px;
+  }
+
+  span {
+    float: left;
+    margin-top: 5px;
+  }
+
+  &::after {
+    content: ' ';
+    display: table;
+    clear: both;
+  }
+}
+
+.modal_shop .wrap .site {
+  height: 25px;
+  float: left;
+
+  .icon {
+    background: url($sprite) no-repeat -303px -71px;
+    width: 16px;
+    height: 24px;
+    float: left;
+    margin-right: 15px;
+  }
+
+  span {
+    float: left;
+    margin-top: 5px;
+    color: #005fa1;
+    text-decoration: underline;
+  }
+}
+
+.modal_shop .wrap .location {
+  height: 25px;
+  float: left;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  .icon {
+    background: url($sprite) no-repeat -332px -71px;
+    width: 18px;
+    height: 24px;
+    float: left;
+    margin-right: 15px;
+  }
+
+  span {
+    float: left;
+    margin-top: 5px;
+  }
+}
+
+.modal_shop .wrap .text_content {
+  height: 200px;
+  font-size: 15px;
+  line-height: 24px;
+}

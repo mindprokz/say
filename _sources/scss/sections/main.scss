@@ -1,4 +1,6 @@
 .main {
+  overflow: hidden;
+
   &::after {
     content: ' ';
     display: table;
@@ -9,6 +11,7 @@
 .video {
   @include span(12);
 
+  float: none;
   height: 400px;
   overflow: hidden;
   position: relative;
@@ -18,7 +21,7 @@
     padding-left: 260px;
   }
 
-  img {
+  video {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -51,4 +54,107 @@
       height: 61px;
     }
   }
+}
+
+.stocks {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
+
+  @media (min-width: 970px) {
+    padding-left: 280px;
+  }
+
+  &::after {
+    content: ' ';
+    display: table;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+.stocks h2 {
+  font-size: 23px;
+  font-weight: 700;
+  color: #3b3b3b;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.stocks .stock_elem {
+  margin-bottom: 25px;
+  cursor: pointer;
+
+  @media (min-width: 1px) {
+    @include span(6);
+  }
+
+  @media (min-width: 750px) {
+    @include span(4);
+  }
+
+  @media (min-width: 1170px) {
+    @include span(3);
+  }
+}
+
+.stocks .stock_elem .wrap {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.stocks .stock_elem .wrap .border {
+  border: 2px solid #e0e0e0;
+  padding: 5px;
+  position: relative;
+}
+
+.stocks .stock_elem .thumb {
+  position: relative;
+  height: 155px;
+  overflow: hidden;
+
+  &.stock::after {
+    content: ' ';
+    background: url($sprite) no-repeat -3px -141px;
+    width: 140px;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+}
+
+.stocks .stock_elem h2 {
+  font-family: $stem-bold;
+  color: #0085a6;
+  font-size: 15px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.stocks .stock_elem p {
+  color: #6e6e6e;
+  font-size: 14px;
+  padding-bottom: 15px;
+}
+
+.stocks .stock_elem .date {
+  color: #db4747;
+  font-size: 13px;
+  background: #fff;
+  position: absolute;
+  bottom: -7px;
+  left: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
 }

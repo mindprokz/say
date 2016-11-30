@@ -8,7 +8,7 @@ $susy: (
   columns: 12,
   gutters: 1/2,
   math: fluid,
-  gutter-position: outside,
+  gutter-position: inside,
 );
 
 $container: 1170px;
@@ -25,6 +25,7 @@ $black: #242424;
 $black_font: #3b3b3b;
 $gray: #4f5253;
 $gray_bg: #f3f4f4;
+$dark_gray: #3d3d3d;
 $orange: #df8569;
 
 * {
@@ -47,6 +48,14 @@ b {
   @include container($container);
 }
 
-@import 'sections/navigation',
+@import
+  'sections/navigation',
   'sections/header_sec',
-  'sections/main';
+  'sections/main',
+  'sections/shops',
+  'sections/stocks',
+  'sections/contact',
+  'sections/time_work',
+  'sections/modal_shop',
+  'sections/preloader',
+  'sections/fancybox';

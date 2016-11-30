@@ -1,3 +1,7 @@
-script(src="libs/jquery/dist/jquery.min.js")
-script(src="libs/fancybox/source/jquery.fancybox.pack.js")
-script(src="bundle.js")
+include time_work.jade
+
+script(src!="<?php echo get_template_directory_uri();?>/libs/jquery/dist/jquery.min.js")
+script(src!="//cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.concat.min.js")
+script(src!="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/jquery.flexslider.min.js")
+script(src!="<?php echo get_template_directory_uri();?>/libs/fancybox/source/jquery.fancybox.pack.js")
+script(src!="<?php echo get_template_directory_uri();?>/bundle.js")

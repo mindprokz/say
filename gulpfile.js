@@ -26,6 +26,7 @@ const pngquant = require('imagemin-pngquant');
 // Браузер синк и модуль для копирования директорий
 const bs = require("browser-sync").create();
 const ncp = require('ncp').ncp;
+const gulpDeployFtp = require('gulp-deploy-ftp');
 
 // Переменная окружения заданная по умолчанию
 let env = process.env.NODE_ENV === 'build' ? 'build' : 'develop';
@@ -36,7 +37,7 @@ gulp.task('server', () => {
   if (env === 'develop') {
     bs.init({
       //server : `./_compile/${env}/`,
-      proxy: 'localhost:8000'
+      proxy: 'saryarka.com'
     })
   }
 
@@ -106,9 +107,6 @@ gulp.task('jade', () => {
   bs.reload();
 });
 
-
-// @TODO поискать css lint
-// task для компиляции scss стилей
 gulp.task('scss', () => {
   let _files = gulp.src(scssPath.from);
 
@@ -127,8 +125,6 @@ gulp.task('scss', () => {
   }
 });
 
-
-
 gulp.task('images', () => {
   gulp.src(imagesPath.from)
   .pipe(imagemin({
@@ -138,8 +134,6 @@ gulp.task('images', () => {
   }))
   .pipe(gulp.dest(imagesPath.to));
 });
-
-
 
 // task for JS
 gulp.task('js', () => {
@@ -164,11 +158,6 @@ gulp.task('js', () => {
   }
 });
 
-
-
-
-// @TODO оставлять только нужные файлы через плагин bower
-// Таск для переноса библиотек в готовую сборку
 gulp.task('libsCompile', () => {
   ncp(libsPath.from, libsPath.to, function (err) {
     if (err) {
@@ -176,8 +165,6 @@ gulp.task('libsCompile', () => {
     }
   });
 });
-
-
 
 //taks for watch change files
 gulp.task('watch', () => {
@@ -201,3 +188,17 @@ if (env === 'develop') {
 } else {
   gulp.task('default', ['jade', 'scss', 'js', 'images', 'libsCompile']);
 }
+
+
+var option_ftp = {
+  user: 'v-2762_merrick',
+  password: 'ShZhg8nE',
+  port: 21,
+  host: 'saryarka.com',
+  uploadPath: '/wp-content/themes/sary'
+}
+
+gulp.task('deploy', () => {
+  return gulp.src('_compile/develop/*.*')
+    .pipe(gulpDeployFtp(option_ftp))
+});

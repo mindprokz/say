@@ -1,0 +1,25 @@
+section.shops
+  include header_sec.jade
+  header!="<b>Услуги и развлечения</b> <span></span>"
+  section.shops_cont
+    include preloader.jade
+    .shop_wrap
+      |<?php 
+      |  $args = array(
+      |    'post_type' => 'entertainment', //Тип поста
+      |    'posts_per_page' => -1,//Постов на одной странице
+      |    'category_name' => 'entertainment' //Категория постов
+      |  );
+      | 
+      |  $lastBlog = new WP_Query($args); //Запрос ко всем постам подходящим под массив #args
+      |  if( $lastBlog->have_posts() ):
+      |    while($lastBlog->have_posts() ): $lastBlog->the_post();
+      | $logo = types_render_field( "logo", array('raw' => true) ) ?>
+      .shop(data-filter!="<?php echo types_render_field( 'category_entertainment', array('raw' => true) ) ?>" data-id!="<?php the_ID(); ?>")
+        .title_wrap
+          .title!="<?php echo the_title(); ?>"
+        .padding
+          .wrap
+            .logo(style!="background: url('<?php echo $logo; ?>') no-repeat center center; background-size: contain;")
+      |   <?php endwhile;
+      |  endif; ?>

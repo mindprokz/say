@@ -1,0 +1,17 @@
+| <?php /*
+|  Template Name: Услуги
+| */?>
+- var first_nav = 'close'
+- var second_nav = 'close'
+- var third_nav = 'open'
+
+doctype html
+html(lang!="ru")
+  head
+    include sections/header.jade
+  body
+    include sections/navigation.jade
+    include sections/service.jade 
+    include modal_shop.jade
+    script!="window.service = true"
+    include sections/footer.jade

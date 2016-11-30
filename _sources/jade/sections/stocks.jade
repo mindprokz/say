@@ -1,0 +1,24 @@
+section.stocks_page
+  include header_sec.jade
+  header!="<b>Акции</b>"
+  section.shops_cont  
+    |<?php 
+    |  $args = array(
+    |    'post_type' => 'stocks_post', //Тип поста
+    |    'posts_per_page' => -1,//Постов на одной странице
+    |    'category_name' => 'stock_rub' //Категория постов
+    |  );
+    | 
+    |  $lastBlog = new WP_Query($args); //Запрос ко всем постам подходящим под массив #args
+    |  if( $lastBlog->have_posts() ):
+    |   while($lastBlog->have_posts() ): $lastBlog->the_post();
+    |     $from = types_render_field( 'start_stock', array() );
+    |     $to = types_render_field( 'end_stock', array() ); ?>
+    article.stock_elem(data-id!="<?php the_ID(); ?>")
+      .wrap
+        h3!="<?php the_title(); ?>"
+        h4!="<?php echo types_render_field( 'stock_subheader', array('raw' => true) ); ?>"
+        .img(style!="background: url(<?php echo types_render_field( 'stock_picture', array('raw' => true) ); ?>) no-repeat center center; background-size: contain;")
+        .date!="<?php echo $from; ?> — <?php echo $to; ?>"
+    |   <?php endwhile;
+    |  endif; ?>
