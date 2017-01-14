@@ -10,7 +10,7 @@ export default (function () {
         setTimeout(() => {
           shop_wrap.style.display = 'none';
           document.querySelector('.spinner').classList.remove('close');
-          setTimeout(() => filter_elem(this.dataset.attr), 500);
+          setTimeout(() => fulter_elem_shop(this.dataset.attr), 500);
         }, 500);
 
       });
@@ -49,6 +49,26 @@ export default (function () {
     });
   }
 })();
+
+function fulter_elem_shop(attr) {
+  changeHeaderForHash(attr);
+  location.hash = attr;
+
+  let reg = new RegExp(attr, 'i');
+  [...document.querySelectorAll('.shops .shops_cont .shop')].forEach( (el) => {
+    el.style.display = 'block';
+
+    if ( !reg.test(el.dataset.filter) ) {
+      el.style.display = 'none';
+    }
+  });
+
+  document.querySelector('.spinner').classList.add('close');
+
+  var shop_wrap = document.querySelector('.shop_wrap');
+  shop_wrap.style.display = 'block';
+  setTimeout(() => shop_wrap.style.opacity="1", 100);
+}
 
 function filter_elem(attr) {
   changeHeaderForHash(attr);

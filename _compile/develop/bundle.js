@@ -186,7 +186,7 @@
 	          shop_wrap.style.display = 'none';
 	          document.querySelector('.spinner').classList.remove('close');
 	          setTimeout(function () {
-	            return filter_elem(_this.dataset.attr);
+	            return fulter_elem_shop(_this.dataset.attr);
 	          }, 500);
 	        }, 500);
 	      });
@@ -231,6 +231,28 @@
 	    });
 	  }
 	}();
+
+	function fulter_elem_shop(attr) {
+	  changeHeaderForHash(attr);
+	  location.hash = attr;
+
+	  var reg = new RegExp(attr, 'i');
+	  [].concat(_toConsumableArray(document.querySelectorAll('.shops .shops_cont .shop'))).forEach(function (el) {
+	    el.style.display = 'block';
+
+	    if (!reg.test(el.dataset.filter)) {
+	      el.style.display = 'none';
+	    }
+	  });
+
+	  document.querySelector('.spinner').classList.add('close');
+
+	  var shop_wrap = document.querySelector('.shop_wrap');
+	  shop_wrap.style.display = 'block';
+	  setTimeout(function () {
+	    return shop_wrap.style.opacity = "1";
+	  }, 100);
+	}
 
 	function filter_elem(attr) {
 	  changeHeaderForHash(attr);
@@ -392,7 +414,7 @@
 	    var result = '';
 
 	    if ('wpcf-site' in data.custom_fields) {
-	      result = '\n      <a href="' + data.custom_fields['wpcf-site'] + '" target="_blank" class="site">\n        <div class="icon"></div><span> Сайт: ' + data.title + '</span></a>\n      ';
+	      result = '\n      <a href="' + data.custom_fields['wpcf-site'] + '" target="_blank" class="site">\n        <div class="icon"></div><span> \u0421\u0430\u0439\u0442: ' + data.title + '</span></a>\n      ';
 	    }
 
 	    return result;
@@ -532,7 +554,7 @@
 	    var result = '';
 
 	    if ('wpcf-site' in data.custom_fields) {
-	      result = '\n      <a href="' + data.custom_fields['wpcf-site'] + '" target="_blank" class="site">\n        <div class="icon"></div><span> Сайт: ' + data.title + '</span></a>\n      ';
+	      result = '\n      <a href="' + data.custom_fields['wpcf-site'] + '" target="_blank" class="site">\n        <div class="icon"></div><span> \u0421\u0430\u0439\u0442: ' + data.title + '</span></a>\n      ';
 	    }
 
 	    return result;
@@ -762,7 +784,7 @@
 	    var result = '';
 
 	    if ('wpcf-site' in data.custom_fields) {
-	      result = '\n        <a href="' + data.custom_fields['wpcf-site'] + '" target="_blank" class="site">\n          <div class="icon"></div><span> Сайт: ' + data.title + '</span></a>\n        ';
+	      result = '\n        <a href="' + data.custom_fields['wpcf-site'] + '" target="_blank" class="site">\n          <div class="icon"></div><span> \u0421\u0430\u0439\u0442: ' + data.title + '</span></a>\n        ';
 	    }
 
 	    return result;
