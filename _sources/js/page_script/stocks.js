@@ -10,6 +10,19 @@ export default function () {
       setTimeout(() => _elem.style.display = 'none', 500);
     });
 
+    // closer модального окна
+    document.querySelector('.modal_shop').addEventListener('click', event => {
+      var _elem = document.querySelector('.modal_shop');
+      var target = event.target || event.srcElement;
+
+      if (_elem === target) {
+        _elem.classList.add('close');
+        document.querySelector('.modal_shop .wrap').classList.add('close');
+
+        setTimeout(() => _elem.style.display = 'none', 500);
+      }
+    });
+
       var search_elems = window.stock_main === true ? '.stocks .stock_elem' : '.stocks_page .shops_cont .stock_elem';
 
       // Обработка всех миниатюр акций
