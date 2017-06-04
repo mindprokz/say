@@ -47,6 +47,7 @@
               <li><a href="http://saryarka.com/shops#Белье мужское и женское" data-attr="Белье мужское и женское"><span class="circle">⚬</span><span>Белье мужское и женское</span></a></li>
               <li><a href="http://saryarka.com/shops#Книги" data-attr="Книги"><span class="circle">⚬</span><span>Книги</span></a></li>
               <li><a href="http://saryarka.com/shops#Игрушки" data-attr="Игрушки"><span class="circle">⚬</span><span>Игрушки</span></a></li>
+              <li><a href="http://saryarka.com/shops#Электроника" data-attr="Электроника"><span class="circle">⚬</span><span>Электроника</span></a></li>
             </ul>
             <h3><span class="opener"></span><a href="http://saryarka.com/eatplace/">Кафе бары рестораны</a></h3>
             <ul id="rest_nav" class="filters close">
